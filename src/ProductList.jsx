@@ -288,7 +288,7 @@ function ProductList({ onHomeClick }) {
                             <p className='product-price'>{plant.cost}</p>
                             <p>{plant.description}</p>
                             <button 
-                                className='product-button added-to-cart'
+                                className='product-button'
                                 disabled={cart.some(item => item.name === plant.name)}
                                 onClick={() => handleAddToCart(plant)}
                             >Add to cart
