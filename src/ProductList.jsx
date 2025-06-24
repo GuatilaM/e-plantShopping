@@ -287,7 +287,12 @@ function ProductList({ onHomeClick }) {
                             <h4 className='product-title'>{plant.name}</h4>
                             <p className='product-price'>{plant.cost}</p>
                             <p>{plant.description}</p>
-                            <button className='product-button' onClick={() => handleAddToCart(plant)}>Add to cart</button>
+                            <button 
+                                className='product-button added-to-cart'
+                                disabled={cart.some(item => item.name === plant.name)}
+                                onClick={() => handleAddToCart(plant)}
+                            >Add to cart
+                            </button>
                         </li>                     
                     ))}
                 </ul>
@@ -303,8 +308,8 @@ function ProductList({ onHomeClick }) {
                         <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
                         <a href="/" onClick={(e) => handleHomeClick(e)}>
                             <div>
-                                <h3 style={{ color: 'white' }}>Paradise Nursery</h3>
-                                <i style={{ color: 'white' }}>Where Green Meets Serenity</i>
+                                <h3 style={{ color: 'white' }}>Tropicalia Nursery</h3>
+                                <i style={{ color: 'white' }}>Where Green Meets Psychedelia</i>
                             </div>
                         </a>
                     </div>
